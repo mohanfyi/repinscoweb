@@ -5,13 +5,15 @@
   "repository": "https://github.com/GoogleCloudPlatform/nodejs-getting-started",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "monitor": "nodemon app.js",
-    "deploy": "gcloud preview app deploy app.yaml"
+    "start": "node ${SCRIPT:-app.js}",
+    "monitor": "nodemon ${SCRIPT:-app.js}",
+    "deploy": "gcloud preview app deploy app.yaml worker.yaml"
   },
   "author": "Jon Wayne Parrott <jonwayne@google.com>, Jonathan Simon <jbsimon@google.com>",
   "license": "Apache Version 2.0",
   "dependencies": {
-    "express": "^4.12.0"
+    "express": "^4.12.0",
+    "gcloud": "git://github.com/GoogleCloudPlatform/gcloud-node",
+    "googleapis": "^1.1.5"
   }
 }
