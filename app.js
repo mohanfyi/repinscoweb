@@ -15,6 +15,7 @@
 "use strict";
 
 var express = require('express');
+var config = require('./config');
 
 var app = express();
 
@@ -31,7 +32,7 @@ app.get('/', function(req, res) {
 
 // [START server]
 /* Start the server */
-var server = app.listen(process.env.PORT || '8080', '0.0.0.0', function() {
+var server = app.listen(config.port, '0.0.0.0', function() {
   console.log('App listening at http://%s:%s', server.address().address, server.address().port);
   console.log("Press Ctrl+C to quit.");
 });
