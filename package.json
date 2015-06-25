@@ -1,16 +1,15 @@
 {
-  "name": "nodejs-getting-started",
+  "name": "ins-co-facade",
   "version": "1.0.0",
-  "description": "End to end sample for running Node.JS applications on Google Cloud Platform",
-  "repository": "https://github.com/GoogleCloudPlatform/nodejs-getting-started",
-  "private": true,
+  "description": "Facade layer to encapsulate low level APIs.",
+  "main": "app.js",
   "scripts": {
     "start": "node ${SCRIPT:-app.js}",
     "monitor": "nodemon ${SCRIPT:-app.js}",
     "deploy": "gcloud preview app deploy app.yaml worker.yaml"
   },
-  "author": "Jon Wayne Parrott <jonwayne@google.com>, Jonathan Simon <jbsimon@google.com>",
-  "license": "Apache Version 2.0",
+  "author": "Mohan",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.12.0",
     "gcloud": "git://github.com/GoogleCloudPlatform/gcloud-node",
