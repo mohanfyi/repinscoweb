@@ -8,7 +8,7 @@ require('./router/main')(app);
 
 app.set('views',__dirname + '/views');
 app.set('view_engine','ejs');
-app.engine('html',require('ejs').renderfile);
+app.engine('html',require('ejs').renderFile);
 app.use(express.static('public'));
 
 var server = app.listen(config.port, '0.0.0.0', function() {
