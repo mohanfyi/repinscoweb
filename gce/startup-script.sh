@@ -16,6 +16,7 @@
 # [START startup]
 # Talk to the metadata server to get the project id
 PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/hellofastandfurious" -H "Metadata-Flavor: Google")
+PROJECTID="prjhellouniverse"
 
 # Install logging monitor and configure it to pickup application logs
 # [START logging]
