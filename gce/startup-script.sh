@@ -86,5 +86,9 @@ EOF
 supervisorctl reread
 supervisorctl update
 
+#supervisorctl stop nodeapp
+#supervisorctl start nodeapp
+#supervisorctl restart nodeapp
+
 # Application should now be running under supervisor
 # [END startup]
