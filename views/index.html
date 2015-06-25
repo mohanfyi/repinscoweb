@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Policy Dashboard for Client</title>
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<h2>Policy Dashboard for Client</h2>
+<div ng-app="" ng-controller="dashboardController">
+
+<h3>Client Details</h3>
+<table>
+   <tr>
+	  <th>Name</th>
+      <th>TIN#</th>	  
+	  <th>Date of Birth</th>
+	  <th>Email</th>
+   </tr>
+   <tr ng-repeat="itemx in dashboarddata">
+	  <td>{{ itemx.full_name }}</td>
+	  <td>{{ itemx.taxpayer_id }}</td>	  
+	  <td>{{ itemx.birth_dte }}</td>
+	  <td>{{ itemx.email }}</td>
+	  
+   </tr>
+</table>
+<br>
+
+<h3>Policy Details</h3>
+<table>
+   <tr>
+      <th>#</th>
+	  <th>Product Number</th>
+      <th>Type</th>
+	  <th>Plan</th>
+	  <th>Role</th>
+	  <th>Benefit Amount</th>
+	  <th>Dividend Amount</th>
+	  <th>Loan Amount</th>
+	  <th>Total Value</th>
+	  <th>Payment Amount</th>
+	  <th>Payment Frequency</th>
+   </tr>
+   <tr ng-repeat="item in dashboarddata.client.products">
+      <td>{{ $index+1 }}</td>
+	  <td>{{ item.product_num }}</td>
+	  <td>{{ item.product_type_cde }}</td>
+	  <td>{{ item.plan_txt }}</td>
+	  <td>{{ item.role }}</td>
+	  <td>{{ item.benefit_amt | currency:"$"  }}</td>
+	  <td>{{ item.dividend_amt | currency:"$"  }}</td>
+	  <td>{{ item.loan_amt | currency:"$"}}</td>
+	  <td>{{ item.total_value | currency:"$" }}</td>
+      <td>{{ item.payment_amount | currency:"$"  }}</td>
+	  <td>{{ item.payment_freq }}</td>
+   </tr>
+</table>
+</div>
+<script>
+function dashboardController($scope,$http) {
+   var url="https://default-dot-nmclvpoc.appspot.com/?productnum=100";
+   //var url="http://127.0.0.1:8080/getdashboarddataforclientproxy";
+   $http.get(url).success( function(response) {
+                           $scope.dashboarddata = response;
+						   console.log(response);
+                        });
+}
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</body>
+</html>
