@@ -1,7 +1,7 @@
 {
-  "name": "ins-co-facade",
+  "name": "ins-co-web",
   "version": "1.0.0",
-  "description": "Facade layer to encapsulate low level APIs.",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node ${SCRIPT:-app.js}",
@@ -11,8 +11,9 @@
   "author": "Mohan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.0",
+    "ejs": "2.3.1",
     "gcloud": "git://github.com/GoogleCloudPlatform/gcloud-node",
-    "googleapis": "^1.1.5"
+    "googleapis": "^1.1.5",
+    "express": "^4.12.4"
   }
 }
